@@ -21,10 +21,20 @@
             padding: 0 20px;
         }
         header {
-            background-color: #ffffff;
-            padding: 20px 0;
-            border-bottom: 1px solid #e9ecef;
             text-align: center;
+            padding: 40px 20px;
+        }
+        .header-content {
+            display: inline-flex;
+            align-items: center;
+            gap: 20px;
+            background-color: #ffffff;
+            padding: 15px 30px;
+            border-radius: 50px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+        }
+        .logo {
+            height: 50px;
         }
         header h1 {
             margin: 0;
@@ -37,7 +47,7 @@
             align-items: center;
             justify-content: center;
             text-align: center;
-            padding: 40px 0;
+            padding: 40px 20px;
         }
         .hero h2 {
             font-size: 2em;
@@ -46,23 +56,44 @@
         .hero p {
             font-size: 1.2em;
             max-width: 600px;
-            margin: 0 auto 30px;
+            margin: 0 auto 40px;
             line-height: 1.6;
         }
-        .cta-button {
-            display: inline-block;
-            background-color: #007bff;
-            color: #ffffff;
-            padding: 15px 30px;
-            font-size: 1.1em;
-            font-weight: bold;
-            text-decoration: none;
-            border-radius: 50px;
-            transition: background-color 0.3s ease, transform 0.3s ease;
+        .store-buttons {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            flex-wrap: wrap;
         }
-        .cta-button:hover {
-            background-color: #0056b3;
+        .store-button {
+            display: inline-block;
+            background-color: #000000;
+            color: #ffffff;
+            padding: 12px 24px;
+            font-size: 1em;
+            text-decoration: none;
+            border-radius: 8px;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            text-align: left;
+            min-width: 180px;
+        }
+        .store-button strong {
+            font-size: 1.2em;
+            display: block;
+        }
+        .store-button:hover {
+            background-color: #333333;
             transform: translateY(-2px);
+        }
+        .store-button.disabled {
+            background-color: #a9a9a9;
+            cursor: not-allowed;
+            opacity: 0.7;
+        }
+        .store-button.disabled:hover {
+            transform: none;
+            background-color: #a9a9a9;
         }
         footer {
             background-color: #343a40;
@@ -74,32 +105,46 @@
         footer a {
             color: #00bfff;
             text-decoration: none;
+            margin: 0 10px;
         }
         footer a:hover {
             text-decoration: underline;
         }
         footer p {
-            margin: 0;
+            margin-bottom: 10px;
         }
     </style>
 </head>
 <body>
-    <header class="container">
-        <h1>Appmiorden</h1>
+    <header>
+        <div class="header-content">
+            <img src="logo.png" alt="Appmiorden Logo" class="logo">
+            <h1>Appmiorden</h1>
+        </div>
     </header>
 
     <main class="container">
         <section class="hero">
             <h2>Simplifica tus finanzas y gestiona tu información importante.</h2>
             <p>Appmiorden es la herramienta todo-en-uno que necesitas para tomar el control de tus gastos, ingresos y contactos importantes como los de tus doctores, todo en un solo lugar seguro.</p>
-            <a href="#" class="cta-button">¡Próximamente en la App Store!</a>
+            <div class="store-buttons">
+                <a href="https://apps.apple.com/ar/app/app-miorden/id6747955058?l=en-GB" target="_blank" class="store-button app-store">
+                    Descárgala en la<br><strong>App Store</strong>
+                </a>
+                <a href="#" class="store-button play-store disabled">
+                    Próximamente en<br><strong>Google Play</strong>
+                </a>
+            </div>
         </section>
     </main>
 
     <footer>
         <div class="container">
             <p>&copy; 2024 Appmiorden. Todos los derechos reservados.</p>
-            <p><a href="privacy-policy.html">Política de Privacidad</a></p>
+            <p>
+                <a href="privacy-policy.html">Política de Privacidad</a> | 
+                <a href="https://docs.google.com/forms/d/1NPAfcIpSXTFzM04aoa-iuAg32Rob3jyarcISRN71K38/viewform" target="_blank">Soporte</a>
+            </p>
         </div>
     </footer>
 </body>
